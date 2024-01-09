@@ -88,7 +88,10 @@ func postUsers(c *gin.Context) {
 //initialises the gin router using Default
 // then we assign the getUsers handler to the endpoint /users
 func main() {
+    // gin.New() returns a new gin engine without any default middleware attached
+    // default contains logger and recovery middleware
     router := gin.Default()
+
     router.GET("/users", getUsers)
 	router.POST("/users", postUsers)
 	// path parameter
